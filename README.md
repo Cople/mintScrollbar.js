@@ -1,5 +1,10 @@
-# mintScrollbar
+# mintScrollbar.js
 Just another jQuery scrollbar plugin.
+
+### Demo
+
+![Demo](http://chart.apis.google.com/chart?cht=qr&chs=200x200&chl=http%3A//cople.github.io/mintScrollbar.js/&chld=H|0)
+[Demo](http://cople.github.io/mintScrollbar.js/)
 
 ### Usage
 
