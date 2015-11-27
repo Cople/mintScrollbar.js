@@ -1,5 +1,5 @@
 /*!
- * mintScrollbar v0.1
+ * mintScrollbar v0.1.1
  * http://cople.github.com/mintScrollbar/
  */
 (function(factory) {
@@ -15,17 +15,14 @@
 
     var isMobile = /Android|iP(hone|od|ad)|webOS|BlackBerry|Opera Mini|Mobile/i.test(window.navigator.userAgent);
 
+    var defaultOptions = {
+        onChange: null,
+        axis: "auto",
+        wheelSpeed: 120,
+        disableOnMobile: true
+    };
+
     function mintScrollbar(target, options) {
-
-        var defaults = {
-            onChange: null,
-            axis: "auto",
-            wheelSpeed: 120,
-            disableOnMobile: true
-        };
-
-        options = $.extend({}, defaults, options);
-
         var self = this,
             callback = function() {},
             axisXActive = false,
@@ -333,6 +330,7 @@
     };
 
     $.fn.mintScrollbar = function(options) {
+        options = $.extend({}, defaultOptions, options);
         return (options.disableOnMobile && isMobile) ? this : this.each(function() {
             var $this = $(this);
             if (!$this.data("mintScrollbar")) {
